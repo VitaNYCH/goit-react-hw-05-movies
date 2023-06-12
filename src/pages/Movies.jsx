@@ -1,8 +1,8 @@
-import { Link, useSearchParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Movies = () => {
-  const [searchParams, setSearchParams] = useSearchParams();
-  console.log(searchParams);
+  // const [searchParams, setSearchParams] = useSearchParams();
+  // console.log(searchParams);
   // useEffect(()=>{
   //     ...HTTP
   // },[])
