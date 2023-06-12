@@ -4,9 +4,11 @@ const TrendMovies = ({ results }) => {
   return (
     <ul>
       {results.map(({ id, original_title, name }) => (
-        <Link key={id}>
-          <TrendMovieItem original_title={original_title} name={name} />
-        </Link>
+        <li key={id}>
+          <Link>
+            <TrendMovieItem original_title={original_title} name={name} />
+          </Link>
+        </li>
       ))}
     </ul>
   );
