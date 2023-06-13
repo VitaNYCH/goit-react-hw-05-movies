@@ -1,7 +1,8 @@
+import TrendMovieLink from './TrendMovieItem.styled';
 const TrendMovieItem = ({ original_title, name }) => {
   return (
     <>
-      <p>{original_title || name}</p>
+      <TrendMovieLink>{original_title || name}</TrendMovieLink>
     </>
   );
 };

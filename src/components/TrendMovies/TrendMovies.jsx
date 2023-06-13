@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import TrendMovieItem from 'components/TrenMovieItem/TrendMovieItem';
+
 const TrendMovies = ({ results }) => {
   return (
     <ul>

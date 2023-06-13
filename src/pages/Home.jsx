@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import TrendMovies from 'components/TrendMovies';
-
+import HomeTitle from './Home.styled';
 const Home = () => {
   const [results, setResults] = useState([]);
   const [error, setError] = useState(null);
@@ -40,7 +40,12 @@ const Home = () => {
   }, []);
   console.log(error);
 
-  return <TrendMovies results={results} />;
+  return (
+    <>
+      <HomeTitle>Trending Movies</HomeTitle>
+      <TrendMovies results={results} />
+    </>
+  );
 };
 
 export default Home;
