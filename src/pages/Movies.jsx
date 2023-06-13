@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Link, useSearchParams, useLocation } from 'react-router-dom';
+import { useSearchParams, useLocation } from 'react-router-dom';
+import SearchMovie from 'components/SearchMovie/SearchMovie';
 import { FaSearch } from 'react-icons/fa';
 import { MovieInput, MovieForm } from './Movie.styled';
 const Movies = () => {
@@ -40,7 +41,7 @@ const Movies = () => {
         if (data.results.length === 0) {
           throw Error('No matches found');
         }
-        setMovies(prevMovie => [...prevMovie, ...data.results]);
+        setMovies(data.results);
       } catch (error) {
         setError(error.message);
       }
@@ -69,7 +70,7 @@ const Movies = () => {
   // const visibleMovie = results.filter(original_title =>
   //   movie.includes(movieId)
   // );
-
+  console.log(location);
   return (
     <div>
       <MovieForm onSubmit={handelSubmit}>
@@ -83,17 +84,7 @@ const Movies = () => {
           <FaSearch style={{ width: 24, height: 24 }} />
         </button>
       </MovieForm>
-      <ul>
-        {movies.map(({ id, original_title, name }) => {
-          return (
-            <li key={id}>
-              <Link to={`${movies}`} state={{ from: location }}>
-                {original_title || name}
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
+      <SearchMovie movies={movies} />
     </div>
   );
 };
