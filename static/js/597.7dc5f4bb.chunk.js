@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgoit_react_hw_05_movies=self.webpackChunkgoit_react_hw_05_movies||[]).push([[597],{597:function(e,s,t){t.r(s);var i=t(689),r=t(184);s.default=function(){var e=(0,i.UO)().movieId;return(0,r.jsxs)("div",{children:["Members of Cast ",e]})}}}]);
+//# sourceMappingURL=597.7dc5f4bb.chunk.js.map
