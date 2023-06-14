@@ -1,13 +1,10 @@
-import TrendMovieItem from 'components/TrenMovieItem/TrendMovieItem';
 import { Link } from 'react-router-dom';
 const SearchMovie = ({ movies }) => {
   return (
     <ul>
       {movies.map(({ id, original_title, name }) => (
         <li key={id}>
-          <Link>
-            <TrendMovieItem original_title={original_title} name={name} />
-          </Link>
+          <Link to={`${original_title || name}`}>{original_title || name}</Link>
         </li>
       ))}
     </ul>

@@ -5,18 +5,11 @@ const Home = () => {
   const [results, setResults] = useState([]);
   const [error, setError] = useState(null);
   useEffect(() => {
-    const options = {
-      method: 'GET',
-      headers: {
-        accept: 'application/json',
-        Authorization:
-          'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5MWEwMDkyODI0OWM4YmMyYmJkMjZkYzlhYTAyZjdiZSIsInN1YiI6IjY0ODcyNTQ3ZTI3MjYwMDE0N2JhZjQ3NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.jrQFhg3zIzgrcOgT3KJMhk2fc76vvqhqSwZS0bI1EK4',
-      },
-    };
+    const BASE_URL = 'https://api.themoviedb.org/3/';
+    const API_KEY = '91a00928249c8bc2bbd26dc9aa02f7be';
     const getTopMovies = async () => {
       const response = await fetch(
-        'https://api.themoviedb.org/3/trending/all/day?language=en-US',
-        options
+        `${BASE_URL}trending/all/day?api_key=${API_KEY}`
       );
       if (!response.ok) {
         throw new Error('Smth went wrong');

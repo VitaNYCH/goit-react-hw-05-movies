@@ -1,8 +1,7 @@
 import styled from '@emotion/styled';
 
 const HomeTitle = styled.h1`
-  margin: 0;
-  margin-bottom: 15px;
+  margin: 15px 0;
   margin-left: 40px;
 `;
 

@@ -1,7 +1,9 @@
 import styled from '@emotion/styled';
-const LayoutList = styled.ul`
+export const LayoutList = styled.ul`
   list-style: none;
   display: flex;
 `;
 
-export default LayoutList;
+export const LayoutHeader = styled.header`
+  border-bottom: 2px solid orange;
+`;
