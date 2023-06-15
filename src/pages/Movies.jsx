@@ -9,7 +9,6 @@ const Movies = () => {
 
   const currentQuery = searchParams.get('query') ?? ' ';
   const location = useLocation();
-  console.log({ currentQuery });
 
   useEffect(() => {
     const BASE_URL = 'https://api.themoviedb.org/3/';
@@ -27,7 +26,6 @@ const Movies = () => {
     const fetchMovies = async () => {
       try {
         const data = await getMovies(currentQuery);
-        console.log(data.results);
         if (data.results.length === 0) {
           throw Error('No matches found');
         }
@@ -41,11 +39,6 @@ const Movies = () => {
   }, [currentQuery]);
 
   console.log(error);
-  console.log(movies);
-  const visibleMovie = movies.filter(movie =>
-    movie.original_title.includes(currentQuery)
-  );
-  console.log(visibleMovie);
   console.log(location);
   return (
     <div>

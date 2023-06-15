@@ -9,7 +9,7 @@ const Home = () => {
     const API_KEY = '91a00928249c8bc2bbd26dc9aa02f7be';
     const getTopMovies = async () => {
       const response = await fetch(
-        `${BASE_URL}trending/all/day?api_key=${API_KEY}`
+        `${BASE_URL}trending/movie/day?api_key=${API_KEY}`
       );
       if (!response.ok) {
         throw new Error('Smth went wrong');
@@ -19,7 +19,6 @@ const Home = () => {
     const fetchHomeMovie = async () => {
       try {
         const data = await getTopMovies();
-        console.log(data);
         if (data.results.length === 0) {
           throw Error('No matches found');
         }

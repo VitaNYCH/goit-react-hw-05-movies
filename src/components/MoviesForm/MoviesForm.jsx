@@ -10,11 +10,10 @@ const MoviesForm = ({ setSearchParams }) => {
     setQuery('');
   };
   const updateQueryString = evt => {
-    console.log(evt.target.value);
+    setQuery(evt.target.value.toLowerCase());
     if (evt.target.value === '') {
       return setSearchParams({});
     }
-    setQuery(evt.target.value.toLowerCase());
     setSearchParams({ currentQuery: evt.target.value });
   };
 
